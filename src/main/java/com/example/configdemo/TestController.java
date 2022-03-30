@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class TestController {
 
-	//@Value("${name}")
+	@Value("${name}")
 	private String name;
 	
 	@Autowired
@@ -25,6 +25,7 @@ public class TestController {
     {
 		System.out.println(env.getProperty("name"));
 		System.out.println(env.getActiveProfiles()[0]);
+		System.out.println("name:::"+name);
 		return env.getProperty("name");
     }
 
